@@ -1,0 +1,267 @@
+/* --------------FONTS------------------ */
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+
+/* ------------CSS VARIABLES----------- */
+:root,
+:root.lightTheme{
+  --bg-img:url(/images/bg-desktop-light.jpg);
+  --color-bg:hsl(0, 0%, 98%);
+  --brandName:hsl(233, 11%, 84%);
+  --todo-color:hsl(236, 33%, 92%);
+  --todoBtn: hsl(236, 33%, 92%);
+  --input-bg: hsl(0, 0%, 98%);
+  --inputBtn:hsl(0, 0%, 98%);
+  --input-ph: hsl(233, 11%, 84%);
+  --text-color: hsl(235, 19%, 35%);
+  --filterText-color: hsl(236, 9%, 61%);
+  --filterHover-color:hsl(220, 98%, 61%);
+  --checkMark-bg: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  --border-color: hsl(0, 0%, 98%);
+}
+
+:root.darkTheme{
+  --bg-img:url(/images/bg-desktop-dark.jpg);
+  --color-bg:hsl(235, 21%, 11%);
+  --brandName:hsl(234, 39%, 85%);
+  --todo-color:hsl(235, 24%, 19%);
+  --todoBtn: hsl(235, 24%, 19%);
+  --todoHover:hsl(236, 33%, 92%);
+  --input-bg: hsl(235, 21%, 11%);
+  --inputBtn:hsl(235, 21%, 11%);
+  --input-ph: hsl(234, 39%, 85%);
+  --text-color:hsl(234, 11%, 52%);
+  --filterText-color: hsl(236, 9%, 61%);
+  --filterHover-color:hsl(220, 98%, 61%);
+  --checkMark-bg: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: auto;
+  padding: auto;
+  background-image: var(--bg-img);
+  background-color: var(--color-bg);
+  background-repeat: no-repeat;
+}
+
+
+main {
+  margin: auto;
+  padding: 2rem;
+  display: grid;
+  grid-template-rows: 1fr 1fr 3fr 1fr;
+  row-gap: 1rem;
+  width: 45%;
+  height: auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--brandName);
+}
+
+header h1 {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 700;
+}
+
+header .toggleBackgroundBtn {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+.inputField {
+  display: flex;
+}
+
+.inputField input {
+  width: 100%;
+  height: 3.2rem;
+  padding: 1rem;
+  font-size: 1rem;
+  background-color: var(--input-bg);
+  outline: none;
+  border: none;
+  color: var(--text-color);
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+  border-radius: 0.4375rem 0 0 0.4375rem;
+}
+
+
+
+.inputField input::placeholder {
+  color: var(--input-ph);
+  font-family: "Josefin Sans", sans-serif;
+}
+
+
+.inputField button {
+  width: 4rem;
+  height: 3.2rem;
+  background-color: var(--inputBtn);
+  outline: none;
+  border: none;
+  border-radius: 0 0.4375rem 0.4375rem 0;
+  cursor: pointer;
+}
+
+
+button .checkContainer {
+  margin: auto;
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-image: var(--checkMark-bg);
+  align-items: center;
+  cursor: pointer;
+  justify-content: center;
+}
+
+.checkContainer svg{
+    position: relative;
+    top: .25rem;
+    cursor: pointer;
+    pointer-events: none;
+}
+
+.todoContainer {
+  width: auto;
+}
+
+.todoContainer ul {
+  list-style: none;
+  width: auto;
+}
+
+
+.todo {
+  display: flex;
+}
+
+
+.todoItem{
+  width: 100%;
+  max-height: auto;
+  padding: 1rem;
+  font-size: 1rem;
+  background-color: var(--todo-color);
+  color: var(--text-color);
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+}
+
+
+.todo button {
+  width: 4rem;
+  height: 3.2rem;
+  background-color: var(--todoBtn);
+  outline: none;
+  border: none;
+  height: auto;
+}
+
+.checkListBtn{
+    cursor: pointer;
+    padding: .625rem;
+    
+}
+
+.checkListContainer{
+    margin: auto;
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    /* border: 0.2px ridge  var(--border-color); */
+    background-image: var(--checkMark-bg);
+    cursor: pointer;
+    pointer-events: none;
+}
+
+.checkListContainer:hover{
+  border: none;
+  background-image: var(--checkBackground);
+}
+
+.checkListContainer img{
+    position: relative;
+    top: .25rem;
+    pointer-events: none;
+}
+
+
+.removeListBtn{
+    cursor: pointer;
+}
+
+.removeListBtn img{
+  cursor: pointer;
+  pointer-events: none;
+}
+
+
+.filterList {
+  display: grid;
+  grid-template-columns: 1fr  1fr  1fr;
+  gap: 5rem;
+  align-items: center;
+  width: 100%;
+  height: 3.2rem;
+  padding: 1rem;
+  font-size: 0.9125rem;
+  border-radius: .625rem;
+  background-color: var(--todo-color);
+  color: var(--filterText-color);
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+}
+
+.filterList h5:hover{
+  color: var(--filterHover-color);
+  cursor: pointer;
+}
+
+.toggleElement{
+  display: flex;
+  gap: 1rem;
+}
+
+.markChecked{
+  text-decoration: line-through;
+  font-weight: bold;
+  color: var(--text-color);
+  opacity: 0.5;
+}
+
+
+
+@media (max-width:576px){
+  body{
+    margin: 0;
+    padding: 0;
+  }
+
+  main{
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .filterList{
+    gap: 1rem;
+    align-items: center;
+  }
+}

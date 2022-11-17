@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="/script.js" defer></script>
+    <title>Todo app</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1 class="brandName">TODO</h1>
+        <button class="toggleBackgroundBtn">
+          <img class="toggleImgDark" src="/images/icon-moon.svg" alt="icon-sun">
+          <img class="toggleImgLight" src="/images/icon-sun.svg" alt="icon-sun">
+        </button>
+      </header>
+      <form class="inputField" action="">
+        <input
+          type="text"
+          name="createTodo"
+          id="createTodo"
+          placeholder="Create a new todo"
+        /><button class="checkBtn" type="submit">
+          <div class="checkContainer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="9">
+              <path
+                fill="none"
+                stroke="#FFF"
+                stroke-width="2"
+                d="M1 4.304L3.696 7l6-6"
+              />
+            </svg>
+          </div>
+        </button>
+      </form>
+      <div class="todoContainer">
+        <ul class="todoList"></ul>
+      </div>
+      <div class="filterList">
+        <div class="itemCount">
+          <h5>5 items left</h5>
+        </div>
+        <div class="toggleElement">
+          <div>
+            <h5>All</h5>
+          </div>
+          <div>
+            <h5>Active</h5>
+          </div>
+          <div>
+            <h5>Completed</h5>
+          </div>
+        </div>
+        <div class="clearCompleted">
+          <h5>Clear completed</h5>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
