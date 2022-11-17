@@ -60,7 +60,7 @@ main {
   display: grid;
   grid-template-rows: 1fr 1fr 3fr 1fr;
   row-gap: 1rem;
-  width: 45%;
+  width: 60%;
   height: auto;
 }
 
@@ -236,8 +236,9 @@ button .checkContainer {
 }
 
 .toggleElement{
-  display: flex;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3rem;
 }
 
 .markChecked{
@@ -261,7 +262,31 @@ button .checkContainer {
   }
 
   .filterList{
-    gap: 1rem;
+    gap: .75rem;
     align-items: center;
+  }
+  
+
+  .toggleElement{
+    gap: .625rem;
+  }
+}
+
+@media (min-width:767px) and (max-width:1023px){
+  body{
+    margin: auto;
+    padding: auto;
+  }
+
+  main{
+    width: 80%;
+  }
+
+.filterList{
+  gap: 2rem;
+}
+
+  .toggleElement{
+    gap: 1rem;
   }
 }
